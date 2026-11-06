@@ -388,7 +388,11 @@
         await apiClient.loginImplicitGrant(CONFIG.clientId, CONFIG.redirectUri);
         logDebug('Login OK');
 
-        const me = await usersApi.getUsersMe();
+        let opts = {
+          'expand': ["groups"] // [String] | Which fields, if any, to expand.
+        };
+
+        const me = await usersApi.getUsersMe(opts);
         genesysLoggedUserName = me.name || me.username || 'Sin nombre';
         genesysUserEl.textContent = genesysLoggedUserName;
         logDebug('Usuario autenticado', me);
