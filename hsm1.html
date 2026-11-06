@@ -396,6 +396,9 @@
         genesysLoggedUserName = me.name || me.username || 'Sin nombre';
         genesysUserEl.textContent = genesysLoggedUserName;
         logDebug('Usuario autenticado', me);
+        let groups = me.groups;
+        let obj = groups.find(o => o.id === '880f3656-edae-4b90-8bf4-8d1d3766bbe8');
+        logDebug('Group', obj);
       } catch (error) {
         console.error(error);
         genesysUserEl.textContent = 'Error: ' + (error.message || String(error));
