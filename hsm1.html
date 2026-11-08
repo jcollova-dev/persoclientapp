@@ -169,6 +169,8 @@
           <option value="referidos_cat">[customer_service_referidos_cat]</option>
           <option value="referidos_tp">[customer_service_referidos_tp]</option>
           <option value="referidos_apex">[customer_service_referidos_apex]</option>
+          <option value="isla_altovalortop_smb">[isla_altovalortop_smb]</option>
+          <option value="regularizacion_cuil_smb">[regularizacion_cuil_smb]</option>
         </select>
       </div>
 
@@ -198,22 +200,22 @@
         { id: 'telefono', label: 'Numero de Telefono', full: true, type: 'text' },
         { id: 'nombre', label: 'Nombre Cliente', full: true, type: 'text' },
         { id: 'nombreAsesor', label: 'Nombre del Asesor', full: true, type: 'text' },
-        { id: 'idReclamo', label: 'ID del Reclamo', full: false, type: 'text' },
-        { id: 'dni', label: 'DNI', full: false, type: 'text' }
+        { id: 'idGestion', label: 'ID del Reclamo', full: false, type: 'text' },
+        { id: 'nroDoc', label: 'DNI', full: false, type: 'text' }
       ],
       reclamo_pendiente: [
         { id: 'telefono', label: 'Numero de Telefono', full: true, type: 'text' },
         { id: 'nombre', label: 'Nombre Cliente', full: true, type: 'text' },
         { id: 'nombreAsesor', label: 'Nombre del Asesor', full: true, type: 'text' },
-        { id: 'idReclamo', label: 'ID del Reclamo', full: false, type: 'text' },
-        { id: 'dni', label: 'DNI', full: false, type: 'text' }
+        { id: 'idGestion', label: 'ID del Reclamo', full: false, type: 'text' },
+        { id: 'nroDoc', label: 'DNI', full: false, type: 'text' }
       ],
       reclamo_pendiente_organismos: [
         { id: 'telefono', label: 'Numero de Telefono', full: true, type: 'text' },
         { id: 'nombre', label: 'Nombre Cliente', full: true, type: 'text' },
         { id: 'nombreAsesor', label: 'Nombre del Asesor', full: true, type: 'text' },
-        { id: 'idReclamo', label: 'ID del Reclamo', full: false, type: 'text' },
-        { id: 'dni', label: 'DNI', full: false, type: 'text' }
+        { id: 'idGestion', label: 'ID del Reclamo', full: false, type: 'text' },
+        { id: 'nroDoc', label: 'DNI', full: false, type: 'text' }
       ],
       referidos_cat: [
         { id: 'nombre', label: 'Nombre del Cliente', full: true, type: 'text' },
@@ -235,6 +237,14 @@
         { id: 'fechaContactacion', label: 'Fecha de Contactacion', full: false, type: 'text' },
         { id: 'horarioContactacion', label: 'Horario de Contactacion', full: false, type: 'text' },
         { id: 'telefono', label: 'Numero de Telefono', full: true, type: 'text' }
+      ],
+      isla_altovalortop_smb: [
+        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
+        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
+        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
+      ],
+      regularizacion_cuil_smb: [
+        { id: 'nroDoc', label: 'Numero de CUIL', full: true, type: 'text' }
       ]
     };
 
@@ -293,8 +303,8 @@
         nombre: getFieldValue('nombre'),
         nombreAsesor: getFieldValue('nombreAsesor'),
         mensajeOpcional: getFieldValue('mensajeOpcional'),
-        idReclamo: getFieldValue('idReclamo'),
-        dni: getFieldValue('dni'),
+        idGestion: getFieldValue('idGestion'),
+        nroDoc: getFieldValue('nroDoc'),
         fechaContactacion: getFieldValue('fechaContactacion'),
         horarioContactacion: getFieldValue('horarioContactacion')
       };
@@ -307,7 +317,9 @@
         reclamo_pendiente_organismos: 'organismos_oficiales_pay_reclamo_pendiente',
         referidos_cat: 'customer_service_referidos_cat',
         referidos_tp: 'customer_service_referidos_tp',
-        referidos_apex: 'customer_service_referidos_apex'
+        referidos_apex: 'customer_service_referidos_apex',
+        isla_altovalortop_smb: 'cisla_altovalortop_smb',
+        regularizacion_cuil_smb: 'regularizacion_cuil_smb'
       };
 
       return map[tipo];
@@ -320,7 +332,9 @@
         reclamo_pendiente_organismos: '918588210759458',
         referidos_cat: '2359236247920576',
         referidos_tp: '971792941979992',
-        referidos_apex: '945780828312380'
+        referidos_apex: '945780828312380',
+        isla_altovalortop_smb: '945780828312380',
+        regularizacion_cuil_smb: '945780828312380'
       };
 
       return map[tipo];
@@ -332,8 +346,8 @@
       const telefonoCapturado = getFieldValue('telefono');
       const nombreAsesorCapturado = getFieldValue('nombreAsesor');
       const mensajeOpcionalCapturado = getFieldValue('mensajeOpcional');
-      const idReclamoCapturado = getFieldValue('idReclamo');
-      const dniCapturado = getFieldValue('dni');
+      const idGestionCapturado = getFieldValue('idGestion');
+      const nroDocCapturado = getFieldValue('nroDoc');
       const fechaContactacionCapturada = getFieldValue('fechaContactacion');
       const horarioContactacionCapturado = getFieldValue('horarioContactacion');
 
@@ -347,12 +361,28 @@
           C4: horarioContactacionCapturado || '',
           C5: telefonoCapturado || ''
         };
-      } else {
+      }
+      
+      if (tipo === 'reclamo_finalizado' || tipo === 'reclamo_pendiente' || tipo === 'reclamo_pendiente_organismos') {
         datoPayload = {
           C1: nombreCapturado || '',
           C2: nombreAsesorCapturado || '',
-          C3: idReclamoCapturado || '',
-          C4: dniCapturado || ''
+          C3: idGestionCapturado || '',
+          C4: nroDocCapturado || ''
+        };
+      }
+
+      if (tipo === 'isla_altovalortop_smb') {
+        datoPayload = {
+          C1: nombreCapturado || '',
+          C2: idGestionCapturado || '',
+          C3: mensajeOpcionalCapturado || ''
+        };
+      }
+
+      if (tipo === 'regularizacion_cuil_smb') {
+        datoPayload = {
+          C1: nroDocCapturado || ''
         };
       }
 
