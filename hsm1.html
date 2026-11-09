@@ -561,6 +561,12 @@
         let groups = me.groups;
         let obj = groups.findIndex(o => o.id === 'bbac0e1f-0f4a-4885-9847-ca02b87ca130');
         logDebug('Group', obj);
+        if (obj >= 0) {
+          var selectTemplate = document.getElementById("tipoGestion");
+          var selectOption = document.createElement("option");
+          selectOption.text = "template_super";
+          selectTemplate.add(selectOption);
+        }
       } catch (error) {
         console.error(error);
         genesysUserEl.textContent = 'Error: ' + (error.message || String(error));
