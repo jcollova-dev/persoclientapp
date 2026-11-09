@@ -348,8 +348,10 @@
     let regionHost = null;
     let genesysLoggedUserName = '';
 
-    const CONFIG = {
-      clientId: '2502f686-e6af-486a-b9a0-8b48eb07bc41',
+    //  clientId: '2502f686-e6af-486a-b9a0-8b48eb07bc41',
+
+      const CONFIG = {
+      clientId: '714cf85c-776b-45e9-8369-a16a7333ca5b',
       redirectUri: window.location.origin + window.location.pathname,
       environmentKey: 'sa_east_1',
       dataActionId: 'custom_-_cf9ac7a1-adee-4789-881f-259af913669f'
@@ -543,7 +545,9 @@
         apiClient.setEnvironment(regionHost);
         logDebug('Región configurada', { environmentKey: CONFIG.environmentKey, host: regionHost });
 
-        await apiClient.loginImplicitGrant(CONFIG.clientId, CONFIG.redirectUri);
+        //await apiClient.loginImplicitGrant(CONFIG.clientId, CONFIG.redirectUri);
+        await apiClient.loginPKCEGrant(CONFIG.clientId, CONFIG.redirectUri);
+
         logDebug('Login OK');
 
         let opts = {
