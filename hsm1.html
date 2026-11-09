@@ -184,7 +184,6 @@
           <option value="soportetecnifofan_smb">[soportetecnifofan_smb]</option>
           <option value="soportetecnicolegados_smb">[soportetecnicolegados_smb]</option>
           <option value="solucionesdigitales_smb">[solucionesdigitales_smb]</option>
-          <option value="tkcompraonboardingcu_smb">[tkcompraonboardingcu_smb]</option>
           <option value="regularizacion_cuil_smb">[regularizacion_cuil_smb]</option>
         </select>
       </div>
@@ -564,7 +563,8 @@
         if (obj >= 0) {
           var selectTemplate = document.getElementById("tipoGestion");
           var selectOption = document.createElement("option");
-          selectOption.text = "template_super";
+          selectOption.value = "tkcompraonboardingcu_smb";
+          selectOption.text = "[tkcompraonboardingcu_smb]";
           selectTemplate.add(selectOption);
         }
       } catch (error) {
