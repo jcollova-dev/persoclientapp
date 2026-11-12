@@ -188,6 +188,15 @@
         </select>
       </div>
 
+      <div class="field">
+        <label for="servicio">Servicio</label>
+        <select id="servicio">
+          <option value="" selected disabled>Seleccionar línea telefónica</option>
+          <option value="5491126222222">Ventas</option>
+          <option value="5491171950001">LíneaÚnica</option>
+        </select>
+      </div>
+
       <div class="grid" id="dynamicFields"></div>
 
       <div class="footer">
@@ -338,6 +347,7 @@
     };
 
     const tipoGestionEl = document.getElementById('tipoGestion');
+    const servicioEl = document.getElementById('servicio');
     const dynamicFieldsEl = document.getElementById('dynamicFields');
     const genesysUserEl = document.getElementById('genesysUser');
     const btnAceptarEl = document.getElementById('btnAceptar');
@@ -390,6 +400,7 @@
     function getFormValues() {
       return {
         tipo: tipoGestionEl.value,
+        servicio: servicioEl.value,
         telefono: getFieldValue('telefono'),
         nombre: getFieldValue('nombre'),
         nombreAsesor: getFieldValue('nombreAsesor'),
@@ -518,7 +529,7 @@
       return {
         id: getIdByTipo(tipo),
         name: getActionNameByTipo(tipo),
-        from: '5491180312371',
+        from: servicioEl.value,
         to: telefonoCapturado || '',
         dato: JSON.stringify(datoPayload)
       };
@@ -583,6 +594,10 @@
 
       if (!values.telefono) {
         throw new Error('El campo Numero de Telefono es obligatorio');
+      }
+
+      if (!values.servicio) {
+        throw new Error('Debe seleccionar un servicio');
       }
 
       if (!apiClient) {
