@@ -157,20 +157,15 @@
 <body>
   <div class="container">
     <div class="card">
-      <h1>SMB</h1>
-      <p class="subtitle">hsm_01_soporte v1</p>
+      <h1>Línea Unica</h1>
+      <p class="subtitle">hsm_01 v1</p>
 
       <div class="field">
         <label for="tipoGestion">Tipo</label>
         <select id="tipoGestion">
-          <option value="reclamo_finalizado" selected>[bo_pay_reclamo_finalizado]</option>
-          <option value="reclamo_pendiente">[bo_pay_reclamo_pendiente]</option>
-          <option value="reclamo_pendiente_organismos">[organismos_oficiales_pay_reclamo_pendiente]</option>
-          <option value="referidos_cat">[customer_service_referidos_cat]</option>
-          <option value="referidos_tp">[customer_service_referidos_tp]</option>
-          <option value="referidos_apex">[customer_service_referidos_apex]</option>
           <option value="isla_altovalortop_smb">[isla_altovalortop_smb]</option>
           <option value="contacto_altovalor">[contacto_altovalor]</option>
+          <option value="regularizacion_cuil_smb">[regularizacion_cuil_smb]</option>
           <option value="catityapoderadoisla_smb">[catityapoderadoisla_smb]</option>
           <option value="convergentenounificadoisla_smb">[convergentenounificadoisla_smb]</option>
           <option value="contactoislaconvynofan_smb">[contactoislaconvynofan_smb]</option>
@@ -184,16 +179,6 @@
           <option value="soportetecnifofan_smb">[soportetecnifofan_smb]</option>
           <option value="soportetecnicolegados_smb">[soportetecnicolegados_smb]</option>
           <option value="solucionesdigitales_smb">[solucionesdigitales_smb]</option>
-          <option value="regularizacion_cuil_smb">[regularizacion_cuil_smb]</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="servicio">Servicio</label>
-        <select id="servicio">
-          <option value="" selected disabled>Seleccionar línea telefónica</option>
-          <option value="5491126222222">Ventas</option>
-          <option value="5491171950001">LíneaÚnica</option>
         </select>
       </div>
 
@@ -219,48 +204,6 @@
 
   <script>
     const templates = {
-      reclamo_finalizado: [
-        { id: 'telefono', label: 'Numero de Telefono', full: true, type: 'text' },
-        { id: 'nombre', label: 'Nombre Cliente', full: true, type: 'text' },
-        { id: 'nombreAsesor', label: 'Nombre del Asesor', full: true, type: 'text' },
-        { id: 'idGestion', label: 'ID del Reclamo', full: false, type: 'text' },
-        { id: 'nroDoc', label: 'DNI', full: false, type: 'text' }
-      ],
-      reclamo_pendiente: [
-        { id: 'telefono', label: 'Numero de Telefono', full: true, type: 'text' },
-        { id: 'nombre', label: 'Nombre Cliente', full: true, type: 'text' },
-        { id: 'nombreAsesor', label: 'Nombre del Asesor', full: true, type: 'text' },
-        { id: 'idGestion', label: 'ID del Reclamo', full: false, type: 'text' },
-        { id: 'nroDoc', label: 'DNI', full: false, type: 'text' }
-      ],
-      reclamo_pendiente_organismos: [
-        { id: 'telefono', label: 'Numero de Telefono', full: true, type: 'text' },
-        { id: 'nombre', label: 'Nombre Cliente', full: true, type: 'text' },
-        { id: 'nombreAsesor', label: 'Nombre del Asesor', full: true, type: 'text' },
-        { id: 'idGestion', label: 'ID del Reclamo', full: false, type: 'text' },
-        { id: 'nroDoc', label: 'DNI', full: false, type: 'text' }
-      ],
-      referidos_cat: [
-        { id: 'nombre', label: 'Nombre del Cliente', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Mensaje Opcional', full: true, type: 'text' },
-        { id: 'fecha', label: 'Fecha de Contactacion', full: false, type: 'text' },
-        { id: 'horario', label: 'Horario de Contactacion', full: false, type: 'text' },
-        { id: 'telefono', label: 'Numero de Telefono', full: true, type: 'text' }
-      ],
-      referidos_tp: [
-        { id: 'nombre', label: 'Nombre del Cliente', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Mensaje Opcional', full: true, type: 'text' },
-        { id: 'fecha', label: 'Fecha de Contactacion', full: false, type: 'text' },
-        { id: 'horario', label: 'Horario de Contactacion', full: false, type: 'text' },
-        { id: 'telefono', label: 'Numero de Telefono', full: true, type: 'text' }
-      ],
-      referidos_apex: [
-        { id: 'nombre', label: 'Nombre del Cliente', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Mensaje Opcional', full: true, type: 'text' },
-        { id: 'fecha', label: 'Fecha de Contactacion', full: false, type: 'text' },
-        { id: 'horario', label: 'Horario de Contactacion', full: false, type: 'text' },
-        { id: 'telefono', label: 'Numero de Telefono', full: true, type: 'text' }
-      ],
       isla_altovalortop_smb: [
         { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
         { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
@@ -359,11 +302,13 @@
 
     //  clientId: '2502f686-e6af-486a-b9a0-8b48eb07bc41',
 
-      const CONFIG = {
+    const CONFIG = {
       clientId: '714cf85c-776b-45e9-8369-a16a7333ca5b',
       redirectUri: window.location.origin + window.location.pathname,
       environmentKey: 'sa_east_1',
-      dataActionId: 'custom_-_cf9ac7a1-adee-4789-881f-259af913669f'
+      dataActionId: 'custom_-_59a21384-a6f8-4f18-8d14-634e90e79d07',
+      lineaWhatsapp: '5491171950001',
+      superGroup: 'bbac0e1f-0f4a-4885-9847-ca02b87ca130'
     };
 
     function logDebug(message, data) {
@@ -414,12 +359,6 @@
 
     function getActionNameByTipo(tipo) {
       const map = {
-        reclamo_finalizado: 'bo_pay_reclamo_finalizado',
-        reclamo_pendiente: 'bo_pay_reclamo_pendiente',
-        reclamo_pendiente_organismos: 'organismos_oficiales_pay_reclamo_pendiente',
-        referidos_cat: 'customer_service_referidos_cat',
-        referidos_tp: 'customer_service_referidos_tp',
-        referidos_apex: 'customer_service_referidos_apex',
         isla_altovalortop_smb: 'isla_altovalortop_smb',
         contacto_altovalor: 'contacto_altovalor',
         catityapoderadoisla_smb: 'catityapoderadoisla_smb',
@@ -444,29 +383,23 @@
 
     function getIdByTipo(tipo) {
       const map = {
-        reclamo_finalizado: '4355743861349881',
-        reclamo_pendiente: '1271795827614498',
-        reclamo_pendiente_organismos: '918588210759458',
-        referidos_cat: '2359236247920576',
-        referidos_tp: '971792941979992',
-        referidos_apex: '945780828312380',
-        isla_altovalortop_smb: '945780828312380',
-        contacto_altovalor: '1010101',
-        catityapoderadoisla_smb: '1010101',
-        convergentenounificadoisla_smb: '1010101',
-        contactoislaconvynofan_smb: '1010101',
-        contacto_isladegradados_smb: '1010101',
-        contacto_esim_smb: '1010101',
-        facturaunificadaisla_smb: '1010101',
-        islahightech_smb: '1010101',
-        islamigra_smb: '1010101',
-        contactoonboarding_smb: '1010101',
-        contacto_retencion_smb: '1010101',
-        soportetecnifofan_smb: '1010101',
-        soportetecnicolegados_smb: '1010101',
-        solucionesdigitales_smb: '1010101',
-        tkcompraonboardingcu_smb: '1010101',
-        regularizacion_cuil_smb: '945780828312380'
+        isla_altovalortop_smb: '799598492795569',
+        contacto_altovalor: '920816094053757',
+        catityapoderadoisla_smb: '2161162031290710',
+        convergentenounificadoisla_smb: '1526333578462350',
+        contactoislaconvynofan_smb: '26179905004985800',
+        contacto_isladegradados_smb: '1851027838942640',
+        contacto_esim_smb: '1576882406938680',
+        facturaunificadaisla_smb: '1276906240965950',
+        islahightech_smb: '1995968251263700',
+        islamigra_smb: '2724302991244220',
+        contactoonboarding_smb: '961674983211498',
+        contacto_retencion_smb: '4280269642215400',
+        soportetecnifofan_smb: '952611163965547',
+        soportetecnicolegados_smb: '1256351303276180',
+        solucionesdigitales_smb: '1461887682174220',
+        tkcompraonboardingcu_smb: '1529690818356300',
+        regularizacion_cuil_smb: '3377198925790390'
       };
 
       return map[tipo];
@@ -484,25 +417,6 @@
       const horarioCapturado = getFieldValue('horario');
 
       let datoPayload;
-
-      if (tipo === 'referidos_cat' || tipo === 'referidos_tp' || tipo === 'referidos_apex') {
-        datoPayload = {
-          C1: nombreCapturado || '',
-          C2: mensajeOpcionalCapturado || '',
-          C3: fechaCapturada || '',
-          C4: horarioCapturado || '',
-          C5: telefonoCapturado || ''
-        };
-      }
-      
-      if (tipo === 'reclamo_finalizado' || tipo === 'reclamo_pendiente' || tipo === 'reclamo_pendiente_organismos') {
-        datoPayload = {
-          C1: nombreCapturado || '',
-          C2: nombreAsesorCapturado || '',
-          C3: idGestionCapturado || '',
-          C4: nroDocCapturado || ''
-        };
-      }
 
       if (tipo === 'isla_altovalortop_smb' || tipo === 'contacto_altovalor' || tipo === 'catityapoderadoisla_smb' || tipo === 'convergentenounificadoisla_smb' || tipo === 'contactoislaconvynofan_smb' || tipo === 'contacto_isladegradados_smb' || tipo === 'contacto_esim_smb' || tipo === 'facturaunificadaisla_smb' || tipo === 'islahightech_smb' || tipo === 'islamigra_smb' || tipo === 'contactoonboarding_smb' || tipo === 'contacto_retencion_smb' || tipo === 'soportetecnifofan_smb' || tipo === 'soportetecnicolegados_smb' || tipo === 'solucionesdigitales_smb') {
         datoPayload = {
@@ -529,7 +443,7 @@
       return {
         id: getIdByTipo(tipo),
         name: getActionNameByTipo(tipo),
-        from: servicioEl.value,
+        from: CONFIG.lineaWhatsapp,
         to: telefonoCapturado || '',
         dato: JSON.stringify(datoPayload)
       };
@@ -569,7 +483,7 @@
         genesysUserEl.textContent = genesysLoggedUserName;
         logDebug('Usuario autenticado', me);
         let groups = me.groups;
-        let obj = groups.findIndex(o => o.id === 'bbac0e1f-0f4a-4885-9847-ca02b87ca130');
+        let obj = groups.findIndex(o => o.id === CONFIG.superGroup);
         logDebug('Group', obj);
         if (obj >= 0) {
           var selectTemplate = document.getElementById("tipoGestion");
