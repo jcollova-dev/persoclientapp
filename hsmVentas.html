@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulario de Reclamos</title>
+  <title>Formulario de Contactos</title>
   <style>
     :root {
       --bg: #eef2f7;
@@ -157,28 +157,18 @@
 <body>
   <div class="container">
     <div class="card">
-      <h1>Línea Unica</h1>
-      <p class="subtitle">hsm_01 v1</p>
+      <h1>Ventas</h1>
+      <p class="subtitle">hsm_1126222222_v1</p>
 
       <div class="field">
         <label for="tipoGestion">Tipo</label>
         <select id="tipoGestion">
-          <option value="isla_altovalortop_smb">[isla_altovalortop_smb]</option>
-          <option value="contacto_altovalor">[contacto_altovalor]</option>
-          <option value="regularizacion_cuil_smb">[regularizacion_cuil_smb]</option>
-          <option value="catityapoderadoisla_smb">[catityapoderadoisla_smb]</option>
-          <option value="convergentenounificadoisla_smb">[convergentenounificadoisla_smb]</option>
-          <option value="contactoislaconvynofan_smb">[contactoislaconvynofan_smb]</option>
-          <option value="contacto_isladegradados_smb">[contacto_isladegradados_smb]</option>
-          <option value="contacto_esim_smb">[contacto_esim_smb]</option>
-          <option value="facturaunificadaisla_smb">[facturaunificadaisla_smb]</option>
-          <option value="islahightech_smb">[islahightech_smb]</option>
-          <option value="islamigra_smb">[islamigra_smb]</option>
-          <option value="contactoonboarding_smb">[contactoonboarding_smb]</option>
-          <option value="contacto_retencion_smb">[contacto_retencion_smb]</option>
-          <option value="soportetecnifofan_smb">[soportetecnifofan_smb]</option>
-          <option value="soportetecnicolegados_smb">[soportetecnicolegados_smb]</option>
-          <option value="solucionesdigitales_smb">[solucionesdigitales_smb]</option>
+          <option value="aseguramientosd_smb">[aseguramientosd_smb]</option>
+          <option value="continuar_gestion_altovalor_smb">[continuar_gestion_altovalor_smb]</option>
+          <option value="continuar_gestion_sdrbdr_smb">[continuar_gestion_sdrbdr_smb]</option>
+          <option value="continuar_porta_cat_smb">[continuar_porta_cat_smb]</option>
+          <option value="continuar_porta_tlp_smb">[continuar_porta_tlp_smb]</option>
+          <option value="medioybajovalorventas_smb">[medioybajovalorventas_smb]</option>
         </select>
       </div>
 
@@ -204,88 +194,43 @@
 
   <script>
     const templates = {
-      isla_altovalortop_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
+      apoderadopendiente_smb_hsm: [
+        { id: 'nroDoc', label: 'Numero de CUIT', full: true, type: 'text' }
+      ],
+      recontactoapoderado_smb_hsm: [
+      ],
+      aseguramientosd_smb: [
         { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
         { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
       ],
-      contacto_altovalor: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
+      continuar_gestion_altovalor_smb: [
         { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
         { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
       ],
-      catityapoderadoisla_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
+      continuar_gestion_sdrbdr_smb: [
         { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
         { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
       ],
-      convergentenounificadoisla_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
+      continuar_porta_cat_smb: [
         { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
         { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
       ],
-      contactoislaconvynofan_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
+      continuar_porta_tlp_smb: [
         { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
         { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
       ],
-      contacto_isladegradados_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
+      docuapoderadoincompleta_smb_hsm: [
+        { id: 'mensajeOpcional', label: 'Documentación faltante', full: false, type: 'text' }
       ],
-      contacto_esim_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
-      ],
-      facturaunificadaisla_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
-      ],
-      islahightech_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
-      ],
-      islamigra_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
-      ],
-      contactoonboarding_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
-      ],
-      contacto_retencion_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
-      ],
-      soportetecnifofan_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
-      ],
-      soportetecnicolegados_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
-      ],
-      solucionesdigitales_smb: [
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
-        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
-      ],
-      tkcompraonboardingcu_smb: [
+      documentacion_porta_smb: [
         { id: 'nroDoc', label: 'Numero de CUIT', full: true, type: 'text' },
-        { id: 'nombre', label: 'Razon Social', full: true, type: 'text' },
-        { id: 'fecha', label: 'Fecha emision de la factura', full: false, type: 'text' }
+        { id: 'mensajeOpcional', label: 'Documentación faltante', full: false, type: 'text' }
       ],
-      regularizacion_cuil_smb: [
-        { id: 'nroDoc', label: 'Numero de CUIL', full: true, type: 'text' }
+      recontactoapoderado_smb_hsm: [
+      ],
+      medioybajovalorventas_smb: [
+        { id: 'idGestion', label: 'Numero de gestion', full: true, type: 'text' },
+        { id: 'mensajeOpcional', label: 'Motivo de contacto', full: false, type: 'text' }
       ]
     };
 
@@ -306,8 +251,8 @@
       redirectUri: window.location.origin + window.location.pathname,
       environmentKey: 'sa_east_1',
       dataActionId: 'custom_-_59a21384-a6f8-4f18-8d14-634e90e79d07',
-      lineaWhatsapp: '5491171950001',
-      superGroup: 'bbac0e1f-0f4a-4885-9847-ca02b87ca130'
+      lineaWhatsapp: '5491126222222',
+      superGroup: '044cb95b-5ab8-4427-a25a-476b8fe29279'
     };
 
     function logDebug(message, data) {
@@ -357,23 +302,17 @@
 
     function getActionNameByTipo(tipo) {
       const map = {
-        isla_altovalortop_smb: 'isla_altovalortop_smb',
-        contacto_altovalor: 'contacto_altovalor',
-        catityapoderadoisla_smb: 'catityapoderadoisla_smb',
-        convergentenounificadoisla_smb: 'convergentenounificadoisla_smb',
-        contactoislaconvynofan_smb: 'contactoislaconvynofan_smb',
-        contacto_isladegradados_smb: 'contacto_isladegradados_smb',
-        contacto_esim_smb: 'contacto_esim_smb',
-        facturaunificadaisla_smb: 'facturaunificadaisla_smb',
-        islahightech_smb: 'islahightech_smb',
-        islamigra_smb: 'islamigra_smb',
-        contactoonboarding_smb: 'contactoonboarding_smb',
-        contacto_retencion_smb: 'contacto_retencion_smb',
-        soportetecnifofan_smb: 'soportetecnifofan_smb',
-        soportetecnicolegados_smb: 'soportetecnicolegados_smb',
-        solucionesdigitales_smb: 'solucionesdigitales_smb',
-        tkcompraonboardingcu_smb: 'tkcompraonboardingcu_smb',
-        regularizacion_cuil_smb: 'regularizacion_cuil_smb'
+        apoderadopendiente_smb_hsm: 'apoderadopendiente_smb_hsm',
+        recontactoapoderado_smb_hsm: 'recontactoapoderado_smb_hsm',
+        aseguramientosd_smb: 'aseguramientosd_smb',
+        continuar_gestion_altovalor_smb: 'continuar_gestion_altovalor_smb',
+        continuar_gestion_sdrbdr_smb: 'continuar_gestion_sdrbdr_smb',
+        continuar_porta_cat_smb: 'continuar_porta_cat_smb',
+        continuar_porta_tlp_smb: 'continuar_porta_tlp_smb',
+        docuapoderadoincompleta_smb_hsm: 'docuapoderadoincompleta_smb_hsm',
+        documentacion_porta_smb: 'documentacion_porta_smb',
+        recontactoapoderado_smb_hsm: 'recontactoapoderado_smb_hsm',
+        medioybajovalorventas_smb: 'medioybajovalorventas_smb'
       };
 
       return map[tipo];
@@ -381,23 +320,17 @@
 
     function getIdByTipo(tipo) {
       const map = {
-        isla_altovalortop_smb: '799598492795569',
-        contacto_altovalor: '920816094053757',
-        catityapoderadoisla_smb: '2161162031290710',
-        convergentenounificadoisla_smb: '1526333578462350',
-        contactoislaconvynofan_smb: '26179905004985800',
-        contacto_isladegradados_smb: '1851027838942640',
-        contacto_esim_smb: '1576882406938680',
-        facturaunificadaisla_smb: '1276906240965950',
-        islahightech_smb: '1995968251263700',
-        islamigra_smb: '2724302991244220',
-        contactoonboarding_smb: '961674983211498',
-        contacto_retencion_smb: '4280269642215400',
-        soportetecnifofan_smb: '952611163965547',
-        soportetecnicolegados_smb: '1256351303276180',
-        solucionesdigitales_smb: '1461887682174220',
-        tkcompraonboardingcu_smb: '1529690818356300',
-        regularizacion_cuil_smb: '3377198925790390'
+        apoderadopendiente_smb_hsm: '1861681418329250',
+        recontactoapoderado_smb_hsm: '1096833352797560',
+        aseguramientosd_smb: '1633077734484930',
+        continuar_gestion_altovalor_smb: '1816781072351640',
+        continuar_gestion_sdrbdr_smb: '1275711927826040',
+        continuar_porta_cat_smb: '4334459916839790',
+        continuar_porta_tlp_smb: '2037430320519120',
+        docuapoderadoincompleta_smb_hsm: '968240612964391',
+        documentacion_porta_smb: '4358745641030130',
+        recontactoapoderado_smb_hsm: '1096833352797560',
+        medioybajovalorventas_smb: '1365335515650580'
       };
 
       return map[tipo];
@@ -416,25 +349,34 @@
 
       let datoPayload;
 
-      if (tipo === 'isla_altovalortop_smb' || tipo === 'contacto_altovalor' || tipo === 'catityapoderadoisla_smb' || tipo === 'convergentenounificadoisla_smb' || tipo === 'contactoislaconvynofan_smb' || tipo === 'contacto_isladegradados_smb' || tipo === 'contacto_esim_smb' || tipo === 'facturaunificadaisla_smb' || tipo === 'islahightech_smb' || tipo === 'islamigra_smb' || tipo === 'contactoonboarding_smb' || tipo === 'contacto_retencion_smb' || tipo === 'soportetecnifofan_smb' || tipo === 'soportetecnicolegados_smb' || tipo === 'solucionesdigitales_smb') {
-        datoPayload = {
-          C1: nombreCapturado || '',
-          C2: idGestionCapturado || '',
-          C3: mensajeOpcionalCapturado || ''
-        };
-      }
-
-      if (tipo === 'tkcompraonboardingcu_smb') {
-        datoPayload = {
-          C1: nroDocCapturado || '',
-          C2: nombreCapturado || '',
-          C3: fechaCapturada || ''
-        };
-      }
-
-      if (tipo === 'regularizacion_cuil_smb') {
+      if (tipo === 'apoderadopendiente_smb_hsm') {
         datoPayload = {
           C1: nroDocCapturado || ''
+        };
+      }
+
+      if (tipo === 'recontactoapoderado_smb_hsm' || tipo === 'recontactoapoderado_smb_hsm') {
+        datoPayload = {
+        };
+      }
+
+      if (tipo === 'aseguramientosd_smb' || tipo === 'continuar_gestion_altovalor_smb' || tipo === 'continuar_gestion_sdrbdr_smb' || tipo === 'continuar_porta_cat_smb' || tipo === 'continuar_porta_tlp_smb' || tipo === 'medioybajovalorventas_smb') {
+        datoPayload = {
+          C1: idGestionCapturado || '',
+          C2: mensajeOpcionalCapturado || ''
+        };
+      }
+
+      if (tipo === 'docuapoderadoincompleta_smb_hsm') {
+        datoPayload = {
+          C1: mensajeOpcionalCapturado || ''
+        };
+      }
+
+      if (tipo === 'documentacion_porta_smb') {
+        datoPayload = {
+          C1: nroDocCapturado || '',
+          C2: mensajeOpcionalCapturado || ''
         };
       }
 
@@ -486,8 +428,20 @@
         if (obj >= 0) {
           var selectTemplate = document.getElementById("tipoGestion");
           var selectOption = document.createElement("option");
-          selectOption.value = "tkcompraonboardingcu_smb";
-          selectOption.text = "[tkcompraonboardingcu_smb]";
+          selectOption.value = "apoderadopendiente_smb_hsm";
+          selectOption.text = "[apoderadopendiente_smb_hsm]";
+          selectTemplate.add(selectOption);
+          selectOption.value = "recontactoapoderado_smb_hsm";
+          selectOption.text = "[recontactoapoderado_smb_hsm]";
+          selectTemplate.add(selectOption);
+          selectOption.value = "docuapoderadoincompleta_smb_hsm";
+          selectOption.text = "[docuapoderadoincompleta_smb_hsm]";
+          selectTemplate.add(selectOption);
+          selectOption.value = "documentacion_porta_smb";
+          selectOption.text = "[documentacion_porta_smb]";
+          selectTemplate.add(selectOption);
+          selectOption.value = "recontactoapoderado_smb_hsm";
+          selectOption.text = "[recontactoapoderado_smb_hsm]";
           selectTemplate.add(selectOption);
         }
       } catch (error) {
